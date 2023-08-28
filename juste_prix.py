@@ -1,18 +1,30 @@
 # Tirage d'un prix (entier) au hasard entre 1 et 10
 import random
 
-random.randint(1,10)
+cible = random.randint(1,10)
 
-# Essai d'un prix
-input("essai : ")
+# 5 essais...
+for i in range(5):
 
-# Message "BRAVO" si le prix est trouvé
+    # Essai d'un prix
+    essai = int(input(f"essai {i} : "))
 
+    # Message "BRAVO" si le prix est trouvé
+    if (cible == essai):
+        print("BRAVO !!!")
 
-# Message "PAS ASSEZ" si le prix est trop bas
+        # Fin au bout de 5 esssais ou si le prix est trouvé
+        break
 
-# Message "TROP ELEVE" si le prix est trop haut
+    # Message "PAS ASSEZ" si le prix est trop bas
+    elif (cible > essai):
+        print("PAS ASSEZ...")
+    # Message "TROP ELEVE" si le prix est trop haut
+    else:
+        print("TROP ELEVE...")
 
 # Message "PERDU" au bout de 5 essais
+if (cible != essai):
+    print("PERDU...")
 
-# Fin au bout de 5 esssais ou si le prix est trouvé
+print("FIN...")
